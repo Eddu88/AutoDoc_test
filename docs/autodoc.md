@@ -15,7 +15,6 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
 
 1. [WorkFlow](#workflow)
 1. [¿Cómo usarlo?](#uso)
-1. [Configurar servidor](#configurar)
 1. [Validaciones](#validaciones) 
 
 # 1. WorkFlow <a name="workflow"></a>

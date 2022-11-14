@@ -13,7 +13,6 @@ Legacy Checker es una herramienta web que se inyecta en Remedy para ayudarnos co
 
 1. [WorkFlow](#workflow)
 1. [¿Cómo usarlo?](#uso)
-1. [Configurar servidor](#configurar)
 1. [Validaciones](#validaciones) 
 
 <br>
