@@ -13,7 +13,6 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 # Contenido
 ---
 
-1. [WorkFlow](#workflow)
 1. [Estructura servidor](#estructura)
 1. [Configurar servidor](#configurar)
     - [Configurar appsettings.json](#configurar-appsettings)
@@ -24,7 +23,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 
 <br>
 
-# 2. Estructura <a name="estructura"></a>
+# 1. Estructura <a name="estructura"></a>
 ---
 
   Para utilizar la herramienta necesita descargar la última versión: 
@@ -48,7 +47,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 
 <br>
 
-# 3. Configuración <a name="configurar"></a>
+# 2. Configuración <a name="configurar"></a>
 ---
 
   ## Configurar Appsettings.Json <a name="configurar-appsettings"></a>
@@ -136,7 +135,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 > **Nota:** Esta credencial se utiliza para la generación automática de scripts para backup.
 <br>
 
-# 4. Ejecutar <a name="ejecutar"></a>
+# 3. Ejecutar <a name="ejecutar"></a>
 ---
 
   Una vez configurado los parametros necesarios, debes ejecutar el fichero `BCPServer.exe`, teniendo un resultado como este:
