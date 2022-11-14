@@ -29,21 +29,7 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
 
 Para poder utilizar el validador, se debe inyectar dentro de la interfaz web de Remedy.
 
-1. Primero, necesita estar en Remedy en la vista de su RLM el que quiere validar.
-    
-    <br>
-
-1. Es necesario abrir la consola de chrome: 
-
-    ```bash
-    CtrlShiftJ (on Windows) or CtrlOptionJ (on Mac).
-    ```
-    <br>
-
-1. En la consola: ingresar y ejecutar lo siguiente:
-
-    ```javascript
-    await fetch(new Request('https://unpkg.com/legacy-checker/dist/main.js')).then(js => js.text()).then(js => eval(js));
+1.   Ya con el servidor iniciado, podemos iniciar el app AutoDoc: [http://localhost:5555](http://localhost:5555)
     ```
     <br>
    
@@ -54,11 +40,8 @@ Para poder utilizar el validador, se debe inyectar dentro de la interfaz web de 
 # 3. Validaciones <a name="validaciones"></a>
 ---
 
-- Valida que se tenga la plantilla correcta.
-- Valida los datos del campo resumen:
-    - App
-    - TA
-then(js => eval(js));
+- Valida el ticket correcto para la coneccion de Bitbucket.
+
 
 <br>
 
