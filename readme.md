@@ -16,7 +16,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 1. [WorkFlow](#workflow)
 1. [Estructura servidor](#estructura)
 1. [Configurar servidor](#configurar)
-2. [Configurar appsettings.json](#configurar-appsettings)
+  - [Configurar appsettings.json](#configurar-appsettings)
       - [Configurar Jira](#configurar-jira)
       - [Configurar Bitbucket](#configurar-bitbucket)
       - [Configurar Datalake](#configurar-datalake)
