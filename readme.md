@@ -22,15 +22,6 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
       - [Configurar Datalake](#configurar-datalake)
 1. [Ejecutar Herramientas](#ejecutar) 
 
-
- ```bash
-  [Configurar appsettings.json](#configurar-appsettings)
-  ├── [Configurar appsettings.json](#configurar-appsettings)
-  ├── appsettings.json
-  ├── BCPServer.exe
-  └── web.config
-  ```
-
 <br>
 
 # 2. Estructura <a name="estructura"></a>
@@ -60,7 +51,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 # 3. Configuración <a name="configurar"></a>
 ---
 
-  ### Configurar appsettings.json <a name="configurar-appsettings"></a>
+  ### CONFIGURAR APPSETTINGS.JSON <a name="configurar-appsettings"></a>
 
   En el fichero encontraremos distintas configuraciones, entre ellas los hosts de Jira, Bitbucket y Bitbucket Legacy.
 
@@ -69,7 +60,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
     "BCP": {
       "Jira": {
         "Host": "https://jira.lima.bcp.com.pe",
-        "UserName": "[UserJira]",
+        "UserName": "[UserJira]",//--> El valor que este aquí, no debe modificarse
         "Password": "[PasswordJira]",
         "TicketSource": "..." //--> El valor que este aquí, no debe modificarse
       },
