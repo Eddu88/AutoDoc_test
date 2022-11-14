@@ -27,12 +27,12 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
 ---
 
 1. Validaciones en bitbucket: 
-    - Validar los datos correctos en la configuración de BCP Server.
-    - Valida el tiket correcto para la conexión de Bitbucket.
-    - Es necesario que BCPServer este en ejecución.  
+  - Validar los datos correctos en la configuración de BCP Server.
+  - Valida el tiket correcto para la conexión de Bitbucket.
+  - Es necesario que BCPServer este en ejecución.  
 
 1. Ejecución:
-    - AutoDoc es una app web, con lo cual se debe usar el siguiente enlace local para utilizar AutoDoc: [http://localhost:5555](http://localhost:5555)
+  - AutoDoc es una app web, con lo cual se debe usar el siguiente enlace local para utilizar AutoDoc: [http://localhost:5555](http://localhost:5555)
 <br>
 
 
