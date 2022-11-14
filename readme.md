@@ -146,7 +146,6 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 
   Ya con el servidor iniciado, podemos iniciar el app AutoDoc: [http://localhost:5555](http://localhost:5555)
 
-  ![Bcp-Server-Initalized](./img/bcp-server.png)
 
 ## Herramientas
 
