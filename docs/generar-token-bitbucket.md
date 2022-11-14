@@ -6,7 +6,7 @@ El proceso de generación de tokens personales es el mismo tanto para Bitbucket 
 
 ## 1. Ingresar a vuestro perfil y a la sección de 'Personal access token'
 
-- [Personal token - Bitbucket SDLC](https://bitbucket.lima.bcp.com.pe/plugins/servlet/access-tokens/manage)
+- [Personal token - Bitbucket SDLC](https://bitbucket.lima.bcp.com.pe/plugins/servlet/access-tokens/manage) 
 - [Personal token - Bitbucket Legacy](https://sources.lima.bcp.com.pe/plugins/servlet/access-tokens/manage)
 
 En la ventana, debes seleccionar **'Create a token'**.
