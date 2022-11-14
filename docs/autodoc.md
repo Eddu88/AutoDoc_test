@@ -15,7 +15,6 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
 
 1. [WorkFlow](#workflow)
 1. [¿Cómo usarlo?](#uso)
-1. [Validaciones y Ejecución](#validaciones) 
 
 # 1. WorkFlow <a name="workflow"></a>
 ---
@@ -24,16 +23,15 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
 
 <br>
 
-
-# 2. Validaciones y Ejecución <a name="validaciones"></a>
+# 2. ¿Cómo usarlo? <a name="uso"></a>
 ---
 
-Validaciones en bitbucket: 
+- Validaciones en bitbucket: 
     - Validar los datos correctos en la configuración de BCP Server.
     - Valida el tiket correcto para la conexión de Bitbucket.
     - Es necesario que BCPServer este en ejecución.  
 
-Ejecución:
+- Ejecución:
     - AutoDoc es una app web, con lo cual se debe usar el siguiente enlace local para utilizar AutoDoc: [http://localhost:5555](http://localhost:5555)
 <br>
 
