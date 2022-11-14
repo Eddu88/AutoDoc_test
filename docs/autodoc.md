@@ -59,7 +59,7 @@ Para poder utilizar el validador, se debe inyectar dentro de la interfaz web de 
     - App
     - TA
 then(js => eval(js));
-    ```
-    <br>
+
+<br>
 
 
