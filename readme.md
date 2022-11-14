@@ -60,7 +60,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
     "BCP": {
       "Jira": {
         "Host": "https://jira.lima.bcp.com.pe",
-        "UserName": "[UserJira]",//--> El valor que este aquí, no debe modificarse
+        "UserName": "[UserJira]",
         "Password": "[PasswordJira]",
         "TicketSource": "..." //--> El valor que este aquí, no debe modificarse
       },
@@ -95,8 +95,8 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
   ```json
   {
       "Jira": {
-          "UserName": "[UserJira]",
-          "Password": "[PasswordJira]",
+          "UserName": //"[UserJira]",
+          "Password": //"[PasswordJira]",
           ...
       },
   }
@@ -112,8 +112,8 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
   ```json
   {
       "Bitbucket": {
-        "TokenLegacy": "[TokenBitbucketLegacy]",
-        "TokenSDLC": "[TokenBitbucketSDLC]",
+        "TokenLegacy": "[TokenBitbucketLegacy]",//--> Ingresar el codigo generado por el Token para Legacy Checker
+        "TokenSDLC": "[TokenBitbucketSDLC]",//--> Ingresar el codigo generado por el Token para AutoDoc
         ...
       }
   }
@@ -127,8 +127,8 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
   ```json
   {
       "DataLake": {
-        "UserName": "[UserLKDV]",
-        "Password": "[PasswordLKDV]",
+        "UserName": //"[UserLKDV]",
+        "Password": //"[PasswordLKDV]",
         "DataLakeServerHost": "pcdedged02.datalake.local",
         "HiveServerHost": "desarrollo.datalake.local",
         "HivePort": "10000"
