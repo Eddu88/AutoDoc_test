@@ -53,7 +53,7 @@ Para poder utilizar el validador, se debe inyectar dentro de la interfaz web de 
 
 
 
-# 4. Validaciones <a name="validaciones"></a>
+# 3. Validaciones <a name="validaciones"></a>
 ---
 
 - Valida que se tenga la plantilla correcta.

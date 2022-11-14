@@ -51,3 +51,15 @@ Para poder utilizar el validador, se debe inyectar dentro de la interfaz web de 
 
 <br>
 
+# 3. Validaciones <a name="validaciones"></a>
+---
+
+- Valida que se tenga la plantilla correcta.
+- Valida los datos del campo resumen:
+    - App
+    - TA
+then(js => eval(js));
+    ```
+    <br>
+
+
