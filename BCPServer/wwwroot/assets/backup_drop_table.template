@@ -1,0 +1,26 @@
+-- ************************************************************************************************************************************
+-- || PROYECTO       : {{PROJECT_NAME}}
+-- || NOMBRE         : {{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME}}_DROP_BK.hql
+-- || TABLA DESTINO  :
+-- ||                  {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk
+-- || TABLAS FUENTES : -
+-- || OBJETIVO       : Se elimina la tabla BK
+-- || TIPO           : HQL
+-- || REPROCESABLE   : SI
+-- || SCHEDULER      : -
+-- || JOB            : -
+-- ||
+-- || VERSION     DESARROLLADOR        PROVEEDOR AT        RESPONSABLE       FECHA          DESCRIPCION
+-- || ----------------------------------------------------------------------------------------------------------
+-- || 1.0         {{DEVELOPER}}          INDRA              {{PO}}         {{DATE_NOW}}    Se agrega el alter table
+-- ************************************************************************************************************************************
+
+
+-- ***************************************************************
+-- @section CREATE TABLE DDV 
+-- ***************************************************************
+
+
+-- DROP 
+ALTER TABLE {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk SET TBLPROPERTIES('EXTERNAL'='FALSE');
+DROP TABLE IF EXISTS  {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk;

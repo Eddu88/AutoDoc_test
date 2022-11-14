@@ -1,0 +1,25 @@
+-- ************************************************************************************************************************************
+-- || PROYECTO       : {{PROJECT_NAME}}
+-- || NOMBRE         : {{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME}}_MSCK_REPAIR.hql
+-- || TABLA DESTINO  :
+-- ||                  {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk
+-- || TABLAS FUENTES : -
+-- || OBJETIVO       : MSCK REPAIR TABLE AL BK
+-- || TIPO           : HQL
+-- || REPROCESABLE   : SI
+-- || SCHEDULER      : -
+-- || JOB            : -
+-- ||
+-- || VERSION     DESARROLLADOR        PROVEEDOR AT        RESPONSABLE       FECHA          DESCRIPCION
+-- || ----------------------------------------------------------------------------------------------------------
+-- || 1.0         {{DEVELOPER}}            INDRA              {{PO}}         {{DATE_NOW}}      MSCK REPAIR TABLE AL BKc
+-- ************************************************************************************************************************************
+
+
+-- tabla bk
+
+MSCK REPAIR TABLE  {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk;
+
+-- tabla final
+
+MSCK REPAIR TABLE  {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}};
