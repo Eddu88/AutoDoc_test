@@ -15,6 +15,7 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
 
 1. [WorkFlow](#workflow)
 1. [¿Cómo usarlo?](#uso)
+1. [Enlases de Interés](#enlases)
 
 # 1. WorkFlow <a name="workflow"></a>
 ---
@@ -32,6 +33,9 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
 
 2. Ejecución:
   - AutoDoc es una app web, con lo cual se debe usar el siguiente enlace local para utilizar AutoDoc: [http://localhost:5555](http://localhost:5555)
+
+# 3. Enlases de interés <a name="enlases"></a>
+  - [Problemas con los accesos a Jira](https://bitbucket.lima.bcp.com.pe/plugins/servlet/access-tokens/manage) 
 <br>
 
 
