@@ -35,7 +35,7 @@ AutoDoc es un herramienta que automatiza la generación de documentación de los
   - AutoDoc es una app web, con lo cual se debe usar el siguiente enlace local para utilizar AutoDoc: [http://localhost:5555](http://localhost:5555)
 
 # 3. Enlases de interés <a name="enlases"></a>
-  - [Problemas con los accesos a Jira](./errores-accesos-jira.md)
+  - [Problemas con la validación de los accesos a Jira](./errores-accesos-jira.md)
 
 <br>
 
