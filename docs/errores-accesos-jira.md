@@ -19,6 +19,4 @@ AutoDoc consulta los Accesos con Jira, al realizar este proceso pueden suceder p
 - Volver a iniciar sesion en Jira. (Probablemente solicite validar catcha).
 - Volver a iniciar el ejecutable de AutoDoc. (BCPServer.exe).
 
----
-
-  ![WorkFlowImg](./img/Jira-infografia.jpeg)
+  ![jira-infografia](./img/Jira-infografia.jpeg)

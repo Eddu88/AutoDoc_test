@@ -140,7 +140,7 @@ BCP Server es una aplicación que genera un servidor para la conexión con Bitbu
 
   Una vez configurado los parametros necesarios, debes ejecutar el fichero `BCPServer.exe`, teniendo un resultado como este:
 
-  ![Bcp-Server-Initalized](./img/bcp-server.png)
+  ![Bcp-Server-Initalized](./docs/img/bcp-server.png)
 
 ## Herramientas
 
