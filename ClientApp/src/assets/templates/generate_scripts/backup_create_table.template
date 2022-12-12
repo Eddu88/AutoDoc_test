@@ -1,0 +1,46 @@
+-- ************************************************************************************************************************************
+-- || PROYECTO       : {{PROJECT_NAME}}
+-- || NOMBRE         : {{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME}}_CREATE_BK.hql
+-- || TABLA DESTINO  :
+-- ||                  {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk
+-- || TABLAS FUENTES : -
+-- || OBJETIVO       : Se crea tabla BK
+-- || TIPO           : HQL
+-- || REPROCESABLE   : SI
+-- || SCHEDULER      : -
+-- || JOB            : -
+-- ||
+-- || VERSION     DESARROLLADOR        PROVEEDOR AT        RESPONSABLE       FECHA          DESCRIPCION
+-- || ----------------------------------------------------------------------------------------------------------
+-- || 1.0         {{DEVELOPER}}       INDRA              {{PO}}     {{DATE_NOW}}      Se crea la tabla backup de {{TABLE_NAME}}
+-- ************************************************************************************************************************************
+
+
+-- ***************************************************************
+-- @section CREATE TABLE DDV 
+-- ***************************************************************
+
+SET hive.exec.compress.output=true;
+SET parquet.compression=snappy;
+SET hive.exec.dynamic.partition=true;
+SET hive.exec.dynamic.partition.mode=nonstrict;
+SET hive.execution.engine=mr;
+SET spark.job.queue.name=default;
+
+SET mapreduce.job.maps=100;
+SET mapreduce.map.cpu.vcores=2;
+SET mapreduce.input.fileinputformat.split.maxsize=10000000000;
+SET mapreduce.input.fileinputformat.split.minsize=10000000000;
+SET mapreduce.map.memory.mb=14000;
+
+SET mapreduce.job.reduces=100;
+SET mapreduce.reduce.cpu.vcores=2;
+SET mapreduce.reduce.memory.mb=14000;
+
+
+
+-- DROP 
+DROP TABLE IF EXISTS  {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk;
+
+-- CREATE BK
+CREATE TABLE {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk LIKE {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}} LOCATION '/{{AMBIENTE}}/{{LOCATION_PATH}}_bk';

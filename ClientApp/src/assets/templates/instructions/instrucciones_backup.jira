@@ -1,0 +1,75 @@
+{panel:title=BACKUP TABLA - AIO OPI HBI}
++*_Organización de Soporte: AIO - OPI - HBI*_+
+
+1.- Ejecutar scripts de creación de tabla BK
+
+Servidor: {{SERVIDOR_LKDV}}
+
+Descargar los scripts desde repositorio bitbucket a la ruta de destino indicado lineas abajo:
+
+Ruta Origen : carpeta scripts del repositorio
+    - {{BITBUCKET_SCRIPT_BACKUP}}/{{AMBIENTE_UPPER}}?at=refs%2Fheads%2Fdevelop
+
+Script: 
+    - {{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_CREATE_BK.hql
+
+Ruta Destino: 
+    - {{PATH_TEMPORAL}}
+
+Dar los permisos necesarios para la ejecución al archivo DDL copiado previamente
+ejecutar los siguientes comandos:
+
+{code}
+sudo su - {{USER_LKDV}}
+chmod -R 750 {{PATH_TEMPORAL}}
+chmod 750 {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_CREATE_BK.hql
+{code}
+
+Ejecutar en beeline
+
+{code}
+sudo su –
+cd
+/usr/bin/kinit -kt /devops/keytab/{{USER_KINIT}}.keytab {{USER_KINIT}}
+beeline -u "jdbc:hive2://{{HIVE_HOST}}:10000/;principal=hive/{{HIVE_HOST}}@DATALAKE.LOCAL;auth-kerberos"
+
+!run {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_CREATE_BK.hql
+{code}
+
+Enviar evidencia de la ejecución
+
+Después, eliminar el archivo DDL ejecutado:
+
+{code}
+Comando
+rm {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_CREATE_BK.hql
+{code}
+
+2.-  Ejecutar Pyspark para poblar tabla BK
+
+Archivo a copiar:
+Ruta Origen Nombre Archivo Ruta Destino
+    - {{BITBUCKET_SCRIPT_BACKUP}}/{{AMBIENTE_UPPER}}?at=refs%2Fheads%2Fdevelop
+
+Script: {{AMBIENTE_UPPER}}_MV_{{TABLE_NAME_BACKUP}}_PROCESS_BACKUP.py 
+
+Ruta Destino:
+    - {{PATH_TEMPORAL}}
+
+Dar owner al archivo .py
+
+{code}
+sudo su -
+chown {{USER_LKDV}}:{{GROUP_LKDV}} {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_MV_{{TABLE_NAME_BACKUP}}_PROCESS_BACKUP.py
+{code}
+
+Ejecutar el archivo .py con el usuario {{USER_LKDV}}
+
+{code}
+su - {{USER_LKDV}}
+spark2-submit {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_MV_{{TABLE_NAME_BACKUP}}_PROCESS_BACKUP.py
+{code}
+
+Enviar evidencia de la ejecución
+
+{panel}

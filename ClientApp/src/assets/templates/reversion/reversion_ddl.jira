@@ -1,0 +1,28 @@
+{panel:title=REVERSION DE DDL - AIO - OPI - HBI}
++*_Organización de Soporte:  AIO - OPI - HBI*_+
+
+*REVERSION DDL {{TYPE_DDL}} - {{AMBIENTE_INSTRUCCIONES}}*
+
+
+Ruta origen: El/Los archivo se encuentra en la herramienta bitbucket. Ingresar a la siguiente Url, con sus credenciales de red:
+
+- {{BITBUCKET_SCRIPT_REVERSION}}?at=refs%2Fheads%2Fdevelop
+
+Ruta destino:
+
+- {{PATH_TEMPORAL}}
+
+Conectarse a Hive (beeline) por consola y ejecutar los siguientes archivos con un usuario con privilegios:
+
+{code}
+sudo su -
+cd
+/usr/bin/kinit -kt /devops/keytab/{{USER_KINIT}}.keytab {{USER_KINIT}}
+beeline -u "jdbc:hive2://{{HIVE_HOST}}:10000/;principal=hive/{{HIVE_HOST}}@DATALAKE.LOCAL;auth-kerberos"
+
+{{LIST_JOBS}}
+{code}
+
+Enviar evidencia de la ejecución. 
+
+{panel}

@@ -1,0 +1,28 @@
+{panel:title=EJECUCIÓN DE SCRIPT SQL - AIO - OPI - PROV}
+_+*Organización* *de Soporte: AIO - OPI - PROV.*+_
+
+*Servidores Involucrados {{AMBIENTE_INSTRUCCIONES}}*
+||Servidor||Función||
+|{{SERVER_APP_WEB_DATAENTRY}}|Servidor para aplicaciones web|
+|{{SERVIDOR_LKDV}}|Servidor Datalake|
+|{{SERVER_MSSQL_DATAENTRY}}|Servidor Base de datos MSSQL|
+
+_{color:#ff0000}*SERVIDOR:{{SERVER_MSSQL_DATAENTRY}}.credito.bcp.com.pe*{color}_
+
+{color:#333333}Ejecución de Script de base de datos:{color}
+
+*2.1. Ingresar a la herramienta Bitbucket , seleccionar la rama {{BRANCH}} y descargar el proyecto.*
+||URL||
+|[{{BITBUCKET_DATAENTRY_URL}}] |
+
+*2.2 Descomprimir la carpeta descargada e ingresar al directorio generado, dentro del mismo, ingresar al directorio `scripts`. Ejecutar solo los script .sql en la base de datos BD_LKDE según cuadro:* 
+|*Carpeta*|*Nombre de Archivos*|
+|*script*|{color:#333333}Script_{{PROCESS_NAME_DATAENTRY}}.sql{color}|
+
+*{color:#ff0000}NOTA: EJECUTAR LOS SIGUIENTES SCRIPTS CON UN USUARIO QUE POSEA PRIVILEGIOS PARA CREAR TABLAS E INDICES{color}* 
+
+*Ejecutar el script en la base de datos BD_LKDE.*
+h4. {color:#ff0000}*NOTA:*{color}
+
+{color:#ff0000}*ENVIAR EVIDENCIA DE LA EJECUCION DEL SCRIPT Y CREACION DE LA TABLA PARA LA RATIFICACIÓN EN EL PASE A PRODUCCION*{color}
+{panel}

@@ -1,0 +1,13 @@
+{panel:title=ELIMINACION ARCHIVO AVRO METADATA - AIO OPI HBI}
++*Organización* *de Soporte: AIO - OPI - HBI.*+_
+
+*Servidor: {{SERVIDOR_LKDV}}*
+ *Usuario: {{USER_LKDV}}*
+
+Ejecutar la siguiente sentencia:
+{code:java}
+{{LIST_JOBS}}
+{code}
+
+*Enviar evidencias
+{panel}

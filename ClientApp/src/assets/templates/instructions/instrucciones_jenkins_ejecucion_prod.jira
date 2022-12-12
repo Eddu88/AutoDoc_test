@@ -1,0 +1,21 @@
+6.- *Para todos los JOBs*: Teniendo en cuenta el orden que se encuentra en la siguiente tabla. En la vista del job jenkins hacer clic en la opción de "*Build with parameters*" que se encuentra en la barra izquierda de la web.  
++*** Es importante ejecutar los jobs en el orden que se encuentra especificado, no se debe ejecutar en paralelo.+.
+
+||Orden||Nombre de JOB||
+{{LIST_JOBS_PIPELINE}}
+
+*_!{{HOST_IMAGE_SERVER}}image-6.png|width=402,height=158!_*
+
+*Imagen referencial
+
+7.- Posteriormente, seleccionamos la primera opcion de la lista (*Ejemplo*: *RC-0.0.1-CERT-fecha*) y luego la opción *Build.*
+
+*_!{{HOST_IMAGE_SERVER}}image-7.png|width=150,height=180!_*
+
+*IMPORTANTE:* DEBEMOS ESPERAR LA EJECUCIÓN DEL JOB, EL RESULTADO DEBERÁ SER EXITOSO (VERDE).
+
+*_!{{HOST_IMAGE_SERVER}}image-5.png|width=150,height=180!_*
+
+*Imagen referencial
+
+*Adjuntar captura de pantalla del resultado exitoso en MVP.*

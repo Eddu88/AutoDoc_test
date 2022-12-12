@@ -1,154 +1,97 @@
 
-# BCP SERVER
+# Sources: AutoDoc - BCPServer
 ---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-BCP Server es una aplicación que genera un servidor para la conexión con Bitbucket y Jira. El uso de BCP Server es necesario para poder utilizar las herramientas de AutoDoc y Legacy Checker.
+AutoDoc es un herramienta que automatiza la generación de documentación de los pases en JIRA del flujo SDLC y automatiza tareas manuales.
 
-![logo-bcp-server](./docs/img/logo-bcp-server.png)
-
-<br>
-
+[AutoDoc Releases](https://bitbucket.lima.bcp.com.pe/projects/LKDVBCP/repos/bcpserver-autodoc-release/browse?at=refs%2Ftags%2Flatest)
 # Contenido
 ---
-
-1. [Estructura servidor](#estructura)
-1. [Configurar servidor](#configurar)
-    - [Configurar appsettings.json](#configurar-appsettings)
-      - [Configurar Jira](#configurar-jira)
-      - [Configurar Bitbucket](#configurar-bitbucket)
-      - [Configurar Datalake](#configurar-datalake)
-1. [Ejecutar Herramientas](#ejecutar) 
+1. [Prerequisitos](#prerequisitos)
+1. [Clona el repositorio](#clona-el-repositorio)
+1. [Compilar](#compilar)
+1. [Ejecutar](#ejecutar)
+1. [Publicar](#publicar)
 
 <br>
 
-# 1. Estructura <a name="estructura"></a>
+# 1. Prerequisitos <a name="prerequisitos"></a>
 ---
+  Para poder ejecutar el projecto es necesario tener instalado:
 
-  Para utilizar la herramienta necesita descargar la última versión: 
-  [Descargar BCP Server Release](https://bitbucket.lima.bcp.com.pe/rest/api/latest/projects/LKDVBCP/repos/bcpserver-autodoc-release/archive?at=refs%2Ftags%2Flatest&format=zip)
+  - [Git](https://git-scm.com)
+  - [.NET SDK](https://dotnet.microsoft.com/en-us/download)
+  - [NodeJS](https://nodejs.org/en/download/)
+  - [Visual Studio Code](https://code.visualstudio.com/) (Opcional)
 
-  Podrá encontrar la siguiente estructura:
+<br>
+
+# 2. Clona el repositorio <a name="clona-el-repositorio"></a>
+---
 
   ```bash
-  BCPServer/
-  ├── wwwroot/
-  ├── appsettings.json
-  ├── BCPServer.exe
-  └── web.config
+    git clone https://bitbucket.lima.bcp.com.pe/projects/LKDVBCP/repos/bcpserver-autodoc-sources/
   ```
 
-  Los siguientes ficheros/carpetas son de importancia:
+  Tendrás la siguiente estructura de carpetas:
 
-  - `wwwroot/` Esta carpeta contiene ficheros del app web de autodoc.
-  - `appsettings.json` Este es el fichero de configuración de credenciales y hosts.
-  - `BCPServer.exe` Ese es el aplicativo que inicia el servidor web.
+  ```bash
+  AutoDoc-BCPServer/
+  ├── ClientApp
+  ├── Controllers
+  ├── Dto
+  ├── Generator
+  ├── Options
+  ├── Responses
+  ├── Services
+  └── publish.bat
+  ```
 
 <br>
 
-# 2. Configuración <a name="configurar"></a>
+# 3. Compilar el projecto <a name="compilar"></a>
 ---
 
-  ## Configurar Appsettings.Json <a name="configurar-appsettings"></a>
-
-  En el fichero encontraremos distintas configuraciones, entre ellas los hosts de Jira, Bitbucket y Bitbucket Legacy.
-
-  ```json
-  {
-    "BCP": {
-      "Jira": {
-        "Host": "https://jira.lima.bcp.com.pe",
-        "UserName": "[UserJira]",
-        "Password": "[PasswordJira]",
-        "TicketSource": "..." //--> El valor que este aquí, no debe modificarse
-      },
-      "Bitbucket": {
-        "HostSDLC": "https://bitbucket.lima.bcp.com.pe",
-        "HostLegacy": "https://sources.lima.bcp.com.pe",
-        "TokenLegacy": "[Token-Bitbucket-Legacy]",
-        "TokenSDLC": "[Token-Bitbucket-SDLC]",
-        "ConstructionBranch": "construccion",
-        "DevelopBranch": "develop",
-        "MasterBranch": "master",
-        "VersionFile": "version"
-      },
-      "DataLake": {
-        "UserName": "[UserLKDV]",
-        "Password": "[PasswordLKDV]",
-        "DataLakeServerHost": "pcdedged02.datalake.local",
-        "HiveServerHost": "desarrollo.datalake.local",
-        "HivePort": "10000"
-      },
-    }
-    ...
+  ```bash
+  dotnet build 
   ```
+  Debemos optener un resultado satisfactorio, es posible que resulten warnings en la compilación.
 
-  > **OJO:** Una vez configurado este fichero, con vuestras credenciales, no deben compartir o distribuir este, ya que si otra persona utiliza vuestras credenciales ambos recibirán una amonestación de seguridad.
-  <br>
-
-  ### Configurar Jira <a name="configurar-jira"></a>
-
-  Debes colocar tus credenciales en la sección de jira, usuario y credencial de red.
-
-  ```json
-  {
-      "Jira": {
-          "UserName": "[UserJira]",
-          "Password": "[PasswordJira]",
-          ...
-      },
-  }
-  ```
-  <br>
-
-  ### Configurar Bitbucket <a name="configurar-bitbucket"></a>
-
-  Primero debes [generar tus tokens personales en bitbucket](./generar-token-bitbucket.md).
-
-  Una vez tengas los tokens generados, debes colocar los tokens en el lugar correspondiente:
-
-  ```json
-  {
-      "Bitbucket": {
-        "TokenLegacy": "[TokenBitbucketLegacy]",//--> Ingresar el codigo generado por el Token para Legacy Checker
-        "TokenSDLC": "[TokenBitbucketSDLC]",//--> Ingresar el codigo generado por el Token para AutoDoc
-        ...
-      }
-  }
-  ```
 <br>
 
-### Configurar Datalake <a name="configurar-datalake"></a>
-
-  Debes colocar tus credenciales en la sección de datalake, usuario BT y la contraseña del datalake.
-
-  ```json
-  {
-      "DataLake": {
-        "UserName": "[UserLKDV]",
-        "Password": "[PasswordLKDV]",
-        ...
-      },
-  }
-  ```
-> **Nota:** Esta credencial se utiliza para la generación automática de scripts para backup.
-<br>
-
-# 3. Ejecutar <a name="ejecutar"></a>
+# 4. Ejecutar <a name="ejecutar"></a>
 ---
 
-  Una vez configurado los parametros necesarios, debes ejecutar el fichero `BCPServer.exe`, teniendo un resultado como este:
+  Una vez compilado puede ejecutarse el proyecto:
+  
+  ```bash
+  dotnet run
+  ```
 
-  ![Bcp-Server-Initalized](./docs/img/bcp-server.png)
+  Esto iniciara el servidor de desarrollo: [http://localhost:5186](http://localhost:5186)
 
-## Herramientas
+  > **Nota:** Se puede revisar todos los end-points expuestos por el servidor local en [http://localhost:5186/swagger](http://localhost:5186/swagger/index.html)
 
-1. [AutoDoc](./docs/autodoc.md) 
-2. [Legacy Checker](./docs/legacy-checker.md) 
+<br>
 
-## Autores
+# 3. Publicar <a name="publicar"></a>
+---
+  
+  Para construir el bundle del proyecto se tiene el siguente archivo .bat:
 
-<!-- - [@bryannehuaman](mailto:bryannehuaman@bcp.com.pe) -->
-- MINSAIT - INDRA
+  ```bash
+  AutoDoc-BCPServer/
+  └── publish.bat
+  ```
+
+  La ejecución de este fichero se iniciaran las siguientes acciones:
+
+  - Limpieza de la carpeta de salida:
+  - Compilación del projecto ClientApp (mode=production)
+  - Limpieza del projecto general
+  - Generación del componente para distribución
+
+  La carpeta de salida es la siguiente: `..\bcpserver-autodoc-release\BCPServer`.
 

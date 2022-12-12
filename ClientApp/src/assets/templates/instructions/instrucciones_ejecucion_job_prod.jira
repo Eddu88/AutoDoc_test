@@ -1,0 +1,19 @@
+{panel:title=EJECUCION DE PROCESO - AIO - OPI - PROV}
++*_Organización de Soporte: AIO - OPI - PROV*_+
+
+1.- Ejecución de los Jobs #s
+*Para Producción*
+
+Nota 1: Realizar la ejecución usando el usuario: *dsadmbcp_prod* con los siguientes comandos:
+
+{code}
+{{EJECUCION_JOBS}}
+{code}
+
+Adicionalmente adjuntar al los siguientes logs:
+
+{code}
+{{LOGS_JOBS_EJECUCION}}
+{code}
+
+{panel}

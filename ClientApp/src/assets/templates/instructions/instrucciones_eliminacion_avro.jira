@@ -1,0 +1,12 @@
+{panel:title=ELIMINACION ARCHIVO AVRO METADATA - AIO OPI HBI}
++*Organización* *de Soporte: AIO - OPI - HBI.*+_
+
+*Servidor: {{SERVIDOR_LKDV}}*
+ *Usuario: {{USER_LKDV}}*
+
+Ejecutar la siguiente sentencia:
+{code:java}
+hdfs dfs -rm /prod/bcp/rdv/de_lkde/data/{{PROCESS_NAME}}/{{PROCESS_NAME_LOWERCASE}}.avro
+hdfs dfs -ls /prod/bcp/rdv/de_lkde/data/{{PROCESS_NAME}}/
+{code}
+{panel}

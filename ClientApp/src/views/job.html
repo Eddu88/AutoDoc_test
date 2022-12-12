@@ -1,0 +1,57 @@
+<div class="mt-4 row border border-minsait rounded pt-2 position-relative job-container" id="{{index_job}}">
+    <div class="col-md-2">
+        <div class="mb-3">
+            <label for="{{layerScript_id}}" class="form-label fs-5 fw-bold color-minsait">Capa</label>
+            <select class="form-select layer-input" id="{{layerScript_id}}" required>
+                <option>RDV</option>
+                <option>UDV</option>
+                <option>DDV</option>
+                <option>EDV</option>
+                <option value="ALI">CALI</option>
+            </select>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="mb-3">
+            <label for="{{job_id}}" class="form-label fs-5 fw-bold color-minsait">Job #</label>
+            <input type="text" class="form-control uppercase-input job-input" maxlength="8" id="{{job_id}}" placeholder="#P1LKKAS" autocomplete="off" required>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="mb-3">
+            <label for="{{charge_process_id}}" class="form-label fs-5 fw-bold color-minsait">Nombre del proceso</label>
+            <input type="text" class="form-control uppercase-input charge-process-input" id="{{charge_process_id}}" placeholder="HM_NOMBREPROCESO" autocomplete="off" required>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 {{file_process_visibility}}">
+        <div class="mb-3">
+            <label for="{{file_process_id}}" class="form-label fs-5 fw-bold color-minsait">Fichero del proceso</label>
+            <input type="text" class="form-control file-process-input" id="{{file_process_id}}" placeholder="HM_NOMBREPROCESO.py" autocomplete="off" {{file_process_required}}>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="{{visibility}}">
+        <div class="form-check text-start color-minsait">
+            <input class="form-check-input" type="checkbox" value="" id="{{only_execution_id}}">
+            <label class="form-check-label" for="{{only_execution_id}}">
+                Solo considerar para ejecución.
+            </label>
+        </div>
+        <div class="form-text">Si se marca el check el proceso no será considerado en las instrucciones de reversión.</div>
+    </div>
+
+    <div class="col-md-12 text-end {{visibility}}">
+        <button class="mb-2 btn-remover btn btn-sm btn-danger" onclick="document.querySelector('#{{index_job}}').remove()"><i class="bi bi-trash"></i> Eliminar job</button>
+    </div>
+</div>

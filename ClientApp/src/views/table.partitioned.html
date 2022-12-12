@@ -1,0 +1,30 @@
+<form class="needs-validation {{collapse_class}} multi-collapse" id="backupForm" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <div class="row">
+        <div class="col-md-8 mb-2">
+            <div class="mb-3">
+                <label for="{{table_id}}" class="form-label fs-5 fw-bold color-minsait">{{label_table_data}}</label>
+                <input type="text" class="form-control uppercase-input" id="{{table_id}}" placeholder="Ejm: DE_PARAMETROPDMUNIDADPBM" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-2">
+                <label for="{{partition_type_id}}" class="form-label fs-5 fw-bold color-minsait">¿Particionado?</label>
+                <select class="form-select" id="{{partition_type_id}}" required>
+                    <option value="Sin Particion">Sin Particion</option>
+                    <option value="Con Particion">Con Particion</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form> 

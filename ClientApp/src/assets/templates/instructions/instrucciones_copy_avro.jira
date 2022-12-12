@@ -1,0 +1,52 @@
+{panel:title=COPIADO DE ARCHIVO AVRO - AIO OPI}
+
+*Organización* *de Soporte: AIO - OPI - PROV.*
+
+1. Crear la carpeta en caso no exista y asignar permisos:
+
+Servidor: {{SERVIDOR_LKDV}}
+
+mkdir -p {{PATH_TEMPORAL}}avro
+
+chmod -R 750 {{PATH_TEMPORAL}}
+
+chown -R {{USER_LKDV}}:{{GROUP_LKDV}} {{PATH_TEMPORAL}}
+
+3.2. Descargar los archivo de los repositorios Bitbucket de los siguientes enlaces:
+
+a) Descargar del repositorio (Branch: *develop*) [{{URL_BITBUCKET}}?at=refs%2Fheads%2Fdevelop] las siguientes carpetas:
+ * /avro/
+
+3.3. Conectarse con una herramienta de transferencia de archivos, se recomienda wincsp, y realizar la copia de las carpetas en la ruta especificada (reemplazar en caso exista):
+||Carpeta||Destino en {{SERVIDOR_LKDV}}||
+{{LIST_FOLDERS_AVRO}}
+
+
+3.4. Otorgar permisos
+
+chmod -R 750 {{PATH_TEMPORAL}}avro
+
+chown -R {{USER_LKDV}}:{{GROUP_LKDV}} {{PATH_TEMPORAL}}avro
+
+*Enviar evidencias
+
+*Área responsable de la ejecución de esta tarea: AIO - OPI - HBI*
+
+3.5. Conectarse al servidor Data Lake con el usuario *{{USER_LKDV}}*  realizar la carga hacia HDFS.
+
+*{color:#ff0000}sudo su -{{USER_LKDV}}{color}*
+
+Para los elementos de la carpeta {{PATH_TEMPORAL}}avro/.
+{code:java}
+{{LIST_PUT_AVRO}}
+{code}
+
+3.6. Asignar permisos a los archivos HDFS.
+{code:java}
+{{LIST_CHMOD_AVRO}}
+{code}
+
+3.7. Enviar evidencias
+{code:java}
+{{LIST_LS_AVRO}}
+{code}

@@ -1,0 +1,99 @@
+@import "variables.scss";
+
+.btn-minsait {
+    color: #fff;
+    background-color: $outline-color;
+    border-color: $outline-color;
+}
+
+.btn-minsait:hover {
+    color: #fff;
+    background-color: $outline-color-hover;
+    border-color: $outline-color-hover;
+}
+
+.color-minsait {
+    color: $font-color;
+}
+
+.border-minsait {
+    border-color: $font-color !important;
+}
+
+.bg-minsait {
+    background-color: $outline-color !important;
+}
+
+.btn-choose {
+    width: 100px;
+}
+
+.lowercase-input {
+    text-transform: lowercase !important;
+}
+
+.fs-7 {
+    font-size: .7rem !important;
+}
+
+.uppercase-input {
+    text-transform: uppercase !important;
+}
+
+.active-transition {
+    transition: all ease-in 400ms;
+}
+
+#content-container {
+    padding: 0px 50px;
+}
+
+.card-minsait {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: $font-color !important;
+    max-width: 15rem;
+    height: fit-content;
+    transition: box-shadow 0.15s ease-in-out;
+
+    .card-body {
+        min-height: 165px !important;
+        
+        ul {
+            padding-left: 1rem;
+        }
+    }
+}
+
+.card-minsait:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#root {
+    -webkit-transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -ms-transition: opacity .25s ease-in-out;
+    -o-transition: opacity .25s ease-in-out;
+    transition: opacity .25s ease-in-out;
+}
+
+.content-scrollable, .select2-results__options {
+    scrollbar-color: $outline-color #e4e4e4;
+    scrollbar-width: thin;
+    overflow-y: auto;
+}
+
+.content-scrollable::-webkit-scrollbar, .select2-results__options::-webkit-scrollbar {
+    width: 15px;
+}
+
+.content-scrollable::-webkit-scrollbar-track, .select2-results__options::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 5px;
+}
+
+.content-scrollable::-webkit-scrollbar-thumb, .select2-results__options::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+    background-color: $outline-color;
+}

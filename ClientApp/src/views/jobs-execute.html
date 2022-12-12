@@ -1,0 +1,21 @@
+<form class="needs-validation" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <div>
+        <label for="bitbucketUrl" class="form-label fs-4 fw-bold color-minsait mt-2 mb-3 d-flex justify-content-between">{{tabel_jobs}} <button id="addJob" type="button" class="btn btn-minsait btn-sm align-bottom"><i class="bi bi-plus-circle"></i> Agregar job</button></label>
+        <div class="mb-3">
+            <div class="form-check text-start color-minsait">
+                <input class="form-check-input" type="checkbox" value="" id="executeAutomated">
+                <label class="form-check-label" for="executeAutomated">
+                    Ejecuci&oacute;n automatizada por pipeline
+                </label>
+            </div>
+            <div class="form-text">Completa toda la informaci&oacute;n siguiente por favor, es necesaria para generar instrucciones.</div>
+        </div>
+
+        <div id="jobList"></div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form>

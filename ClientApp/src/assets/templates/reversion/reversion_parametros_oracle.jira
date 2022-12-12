@@ -1,0 +1,17 @@
+{panel:title=REVERSION DE PARAMETROS ORACLE - AIO - OPI - PROV}
++*_Organización de Soporte:  AIO - OPI - PROV*_+
+
+*REVERSION ORACLE - {{AMBIENTE_INSTRUCCIONES}}*
+
+Servidor: {{SERVIDOR_ORACLE}}
+Base de datos: {{BASEDATOS_ORACLE}}
+Schema: {{SCHEMA_NAME}}
+
+Ruta origen: El archivo se encuentra en la herramienta bitbucket. Ingresar a la siguiente Url, con sus credenciales de red:
+
+    - {{BITBUCKET_SCRIPT_REVERSION}}?at=refs%2Fheads%2Fdevelop
+
+Conectarse a la base de datos Oracle indicada y ejecutar el siguiente archivo, con un usuario con privilegios.
+    {{LIST_JOBS}}
+
+{panel}

@@ -1,0 +1,36 @@
+{panel:title=EJECUCIÓN DE PIPELINE - {{UNIDAD_SOPORTE_JENKINS}}}
++*_Organización de Soporte:{{UNIDAD_SOPORTE_JENKINS}}*_+
+
+*PRUEBA INTEGRAL*
+_*Todas las imágenes son referenciales*_
+
+{{MOVING_PIPELINE}}
+
+2.- Ingresar a la url +[https://jenkins.lima.bcp.com.pe/view/LKDV_BCP/job/LKDV_BCP-{{AMBIENTE_UPPER}}]+ con sus credenciales de red.
+
+*_!{{HOST_IMAGE_SERVER}}image-3.png|width=150,height=180!_*
+
+*Imagen referencial
+
+3.- Con el buscador que se encuentra en la barra superior de la web, buscar los siguientes jobs:
+||Orden||Nombre de JOB||
+{{LIST_JOBS_PIPELINE}}
+
+4.- En la vista del resultado de la búsqueda, hacer clic en la opción de *"Configurar"* que se encuentra en la barra izquierda de la web.
+
+5.- *Para todos los JOBs*: En la vista del resultado de la búsqueda, hacer clic en la opción de "*Configurar*" que se encuentra en la barra izquierda de la web. En la vista de configuración, ir a la pestaña *"Pipeline"* y luego buscar el campo *"Credentials",* desplegar el combobox y seleccionar la opción *"{{USER_JENKINS}}".* Adicionalmente validar los siguientes campos con su respectiva información:
+||TODOS LOS JOBS||
+|Credentials|{{USER_JENKINS}}|
+|Branch Specifier|{{BRANCH_JENKINS}}|
+|Script Path|devops/jenkins/Jenkinsfile-delivery-{{AMBIENTE}}-pipeline.groovy|
+{{LIST_CONFIG_JOBS_PIPELINE}}
+
+Hacer clic en *"Guardar"*
+
+*_!{{HOST_IMAGE_SERVER}}image-4.png|width=400,height=220!_*
+
+*Imagen referencial
+
+{{EJECUCION_PIPELINE}}
+
+{panel}

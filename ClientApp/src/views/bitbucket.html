@@ -1,0 +1,35 @@
+<form class="needs-validation {{collapse_class}} multi-collapse" novalidate onsubmit="return false" id="bitbucketForm">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <div class="col mb-2">
+        <div class="mb-3">
+            <label for="{{bitbucket_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">{{label_bitbucket}}</label>
+            <input type="text" class="form-control" id="{{bitbucket_id}}" placeholder="Ejm: https://bitbucket.lima.bcp.com.pe/projects/LKDV..." required autocomplete="off">
+            <div class="invalid-feedback">
+                Asegurese de ingresar informaci&oacute;n correcta.
+            </div>
+            <div class="form-text">Asegurate de quitar de la URL valores de ambiente (CERT/PROD) o usuarios.</div>
+            <div id="identify" class="mb-3 mt-3 border-start border-minsait border-3">
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <td class="text-secondary" style="width: 120px;">Proyecto:</td>
+                            <td class="font-monospace"><span id="textProject" class="badge bg-danger">-</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary" style="width: 100px;">Repositorio:</td>
+                            <td class="font-monospace"><span id="textRepository" class="badge bg-danger">-</span></td>
+                        </tr>
+                        <tr class="{{visibility_path_scripts}}">
+                            <td class="text-secondary" style="width: 100px;">Ruta scripts:</td>
+                            <td class="font-monospace"><span id="textPath" class="badge bg-danger">-</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form>

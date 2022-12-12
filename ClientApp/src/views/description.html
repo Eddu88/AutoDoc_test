@@ -1,0 +1,87 @@
+﻿<form class="needs-validation" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <label for="description" class="form-label fs-4 fw-bold color-minsait mt-2 mb-3">{{label_process_deployment}}</label>
+    {{list_jobs}}
+    
+    <div class="row">
+        <label for="description" class="form-label fs-4 fw-bold color-minsait mt-2 mb-3">{{label_metadata_linaje}}</label>
+        <div class="col-md-6">
+            <div class="mb-4">
+                <label for="{{metadata_id}}" class="form-label fs-6 fw-bold color-minsait">Metadata</label>
+                <input type="text" class="form-control uppercase-input process-input" id="{{metadata_id}}" placeholder="HM_NOMBREPROCESO_METADATA" autocomplete="off" required {{metadata_readonly}}>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-4">
+                <label for="{{linaje_id}}" class="form-label fs-6 fw-bold color-minsait">Linaje</label>
+                <input type="text" class="form-control uppercase-input process-input" id="{{linaje_id}}" placeholder="HM_NOMBREPROCESO_LINAJE" autocomplete="off" required {{linaje_readonly}}>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <label for="description" class="form-label fs-4 fw-bold color-minsait mt-2 mb-3">{{label_pass_component}}</label>
+        
+        <div class="col-md-3">
+            <div class="mb-4">
+                <label for="{{critical_id}}" class="form-label fs-6 fw-bold color-minsait">Ruta Crítica Impactada</label>
+                <div class="row">
+                    <div class="col-5">
+                        <select class="form-select" id="{{critical_id}}_option" required>
+                            <option>NO</option>
+                            <option>SI</option>
+                        </select>
+                    </div>
+                    <div class="col-7">
+                        <input type="text" disabled class="form-control uppercase-input pass-input" id="{{critical_id}}" placeholder="Nombre rutina" autocomplete="off" required>
+                        <div class="invalid-feedback">
+                            Este campo es obligatorio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-4">
+                <label for="{{relationships_id}}" class="form-label fs-6 fw-bold color-minsait">Predecesor / Sucesor</label>
+                <input type="text" class="form-control uppercase-input pass-input" id="{{relationships_id}}" placeholder="Predecesores y/o sucesores" autocomplete="off">
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>        
+        <div class="col-md-3">
+            <div class="mb-4">
+                <label for="{{type_id}}" class="form-label fs-6 fw-bold color-minsait">Nuevo o Modificado</label>
+                <select class="form-select" id="{{type_id}}" required>
+                    <option>Modificado</option>
+                    <option>Nuevo</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-4">
+                <label for="{{cross_id}}" class="form-label fs-6 fw-bold color-minsait">Cross</label>
+                <select class="form-select" id="{{cross_id}}" required>
+                    <option>NO</option>
+                    <option>SI</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3 mt-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form>

@@ -1,0 +1,29 @@
+{panel:title=REVERSION DE ARCHIVOS FUENTE - AIO - OPI - PROV}
++*_Organización de Soporte:AIO - OPI - PROV*_+
+
+*REVERSION FICHERO FUENTE - {{AMBIENTE_INSTRUCCIONES}}*
+
+1.- Reversión: Copia de archivos a LINUX 
+Ingresar al servidor del datalake con el usuario dsadm o (sudo su) y realizar la restauración de los archivos.
+
+Servidor: {{SERVIDOR_LKDV}}
+Reestablecer los archivos backup realizados por el pipeline:
+
+Ruta origen : 
+
+    - {{PATH_SCRIPTS}}
+
+{{FILE_PROCESS}}
+
+Ejm: 
+{{FILE_PROCESS_EJM}}
+
+Restablecer con el siguiente nombre:
+
+Ruta destino : 
+
+    - {{PATH_SCRIPTS}}
+
+{{FILE_PROCESS}}
+
+{panel}

@@ -1,0 +1,15 @@
+1.- Mover Jobs y configurar:
+
+Ingresar a la url [https://jenkins.lima.bcp.com.pe/job/LKDV_BCP-DEV/job/JOBS_{{CAPA}}/] con sus credenciales de red y hacer click en el siguiente job:
+||Orden||Nombre de JOB||
+{{LIST_JOBS_PIPELINE}}
+
+Hacer click en la opción "Move" del panel derecho dentro del job.
+
+*_!{{HOST_IMAGE_SERVER}}image-1.png|width=150,height=180!_*
+
+Seleccionar la sgte. ruta y click en "Move"
+
+*_!{{HOST_IMAGE_SERVER}}image-2.png!_*
+
+El job será movido a la ruta [https://jenkins.lima.bcp.com.pe/view/LKDV_BCP/job/LKDV_BCP-{{AMBIENTE_UPPER}}]

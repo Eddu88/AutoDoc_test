@@ -1,0 +1,16 @@
+{panel:title=REVERSION DE INFORMACION - AIO - OPI - HBI}
++*_Organización de Soporte:  AIO - OPI - HBI*_+
+
+*REVERSION INFORMACION - {{AMBIENTE_INSTRUCCIONES}}*
+
+1.-  Ejecutar comando HDFS reestablecer data de la tabla bk
+
+Servidor: {{SERVIDOR_LKDV}}
+
+Ingresar al servidor datalake de certificacion con el usuario *{{USER_LKDV}}* desde la consola y ejecutar el siguiente comando hdfs:
+
+{code}
+hdfs dfs -cp {{PATH_DATA}}data/out/{{TABLE_NAME_BACKUP}}_bk/* {{PATH_DATA}}data/out/{{TABLE_NAME_BACKUP}}
+{code}
+
+{panel}

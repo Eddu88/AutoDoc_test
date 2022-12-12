@@ -1,0 +1,48 @@
+
+{panel:title=DEFINIR TABLA EN DATA ENTRY - COS - ACCESOS - PASES}
+_+*Organización* *de Soporte: COS - ACCESOS - PASES.*+_
+
+
+*Dar de alta a la tabla en la aplicación Data Entry Lake:*
+
+*4.1. Ingresar a la url:*
+
+[https://{{DATAENTRY_HOST}}.datalake.local:8443/dataentry/#/auth/login]
+
+
+*4.2. Ingresar con credenciales que tengan el perfil de Administrador HD*
+
+Nota: Imágenes referenciales
+
+*_!{{HOST_IMAGE_SERVER}}data_entry_login.png|width=400,height=220!_*
+
+*4.3. Dirigirse al modulo definición de tablas*
+
+Nota: Imágenes referenciales
+
+*_!{{HOST_IMAGE_SERVER}}definicion_tablas.png|width=400,height=220!_*
+
+*4.4. Selecciona la base de datos BD_LKDE y presionar el botón Agregar*
+
+Nota: Imágenes referenciales
+
+*_!{{HOST_IMAGE_SERVER}}agregar_tabla.png|width=400,height=220!_*
+
+*4.5. Seleccionar el checkbox de la tabla*
+|*Nombre de Archivos*|
+|{{PROCESS_NAME_DATAENTRY}}|
+
+*Seleccionar el tipo de capa 'RDV' y el tipo de partición '{{PARTITION_OPTION}}' y presione el boton guardar.*
+
+ Nota: Imágenes referenciales
+
+*_!{{HOST_IMAGE_SERVER}}particion_tabla.png|width=556,height=42!_*
+
+*4.6. Verificar que la tabla se ha agregado correctamente a la lista de tablas*
+
+Nota: Imágenes referenciales 
+
+*_!{{HOST_IMAGE_SERVER}}verificar_tabla.png|width=400,height=220!_*
+
+*{color:#d04437}NOTA: ENVIAR LA EVIDENCIA DE LA TABLA GUARDADA (SIMILAR AL PASO 6){color}*
+{panel}

@@ -1,0 +1,48 @@
+{panel:title=REVERSION REPARAR TABLA - AIO - OPI - PROV}
++*_Organización de Soporte:  AIO - OPI - PROV*_+
+
+*REVERSION MSCK REPAIR TABLE - {{AMBIENTE_INSTRUCCIONES}}*
+
+Servidor: {{SERVIDOR_LKDV}}
+
+Ruta origen: El archivo se encuentra en la herramienta bitbucket. Ingresar a la siguiente Url, con sus credenciales de red:
+
+    - {{BITBUCKET_SCRIPT_REVERSION}}?at=refs%2Fheads%2Fdevelop
+
+Script:
+    - {{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_MSCK_REPAIR.hql
+
+Ruta Destino: 
+    - {{PATH_TEMPORAL}}
+
+
+Dar los permisos necesarios para la ejecución al archivo DDL copiado previamente
+ejecutar los siguientes comandos:
+
+{code}
+sudo su - {{USER_LKDV}}
+chmod -R 750 {{PATH_TEMPORAL}}
+chmod 750 {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_MSCK_REPAIR.hql
+{code}
+
+Ejecutar en beeline
+
+{code}
+sudo su –
+cd
+/usr/bin/kinit -kt /devops/keytab/{{USER_KINIT}}.keytab {{USER_KINIT}}
+beeline -u "jdbc:hive2://{{HIVE_HOST}}:10000/;principal=hive/{{HIVE_HOST}}@DATALAKE.LOCAL;auth-kerberos"
+
+!run {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_MSCK_REPAIR.hql
+{code}
+
+Enviar evidencia de la ejecución
+
+Después, eliminar el archivo DDL ejecutado:
+
+{code}
+Comando
+rm {{PATH_TEMPORAL}}{{AMBIENTE_UPPER}}_DDL_{{TABLE_NAME_BACKUP}}_MSCK_REPAIR.hql
+{code}
+
+{panel}

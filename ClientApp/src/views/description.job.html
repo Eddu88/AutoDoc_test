@@ -1,0 +1,38 @@
+<div class="row border rounded mb-2 job-container" id="{{index_job}}">
+    <div class="col-md-3">
+        <div class="mb-4">
+            <label for="{{layer_id}}" class="form-label fs-6 fw-bold color-minsait">Capa</label>
+            <input type="text" value="{{layer_value}}" class="form-control uppercase-input process-input" id="{{layer_id}}" placeholder="RDV" autocomplete="off" required readonly>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="mb-4">
+            <label for="{{process_id}}" class="form-label fs-6 fw-bold color-minsait">Proceso</label>
+            <input type="text" value="{{process_value}}" class="form-control uppercase-input process-input" id="{{process_id}}" placeholder="HM_NOMBREPROCESO" autocomplete="off" required {{process_readonly}}>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="mb-4">
+            <label for="{{technology_id}}" class="form-label fs-6 fw-bold color-minsait">Tecnología</label>
+            <input type="text" class="form-control uppercase-input pass-input" id="{{technology_id}}" placeholder="PYSPARK" autocomplete="off" required {{process_readonly}}>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="mb-4">
+            <label for="{{job_id}}" class="form-label fs-6 fw-bold color-minsait">Job @</label>
+            <input type="text" value="{{job_value}}" class="form-control uppercase-input pass-input" maxlength="8" id="{{job_id}}" placeholder="@P1LKKAS" autocomplete="off" required {{process_readonly}}>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+</div>

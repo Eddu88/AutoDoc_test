@@ -1,0 +1,43 @@
+<form class="needs-validation {{collapse_class}}" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <div class="row">
+        <div class="col-md-8 mb-2">
+            <div class="mb-3">
+                <label for="{{jenkins_id}}" class="form-label fs-4 fw-bold color-minsait">{{label_jenkins}}</label>
+                <input type="text" class="form-control uppercase-input" id="{{jenkins_id}}" placeholder="Ejm: DDV_CRM_CRMO_COLOCACIONES" required autocomplete="off">
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+                <div class="form-text">Asegurese de solo ingresar el nombre del pipelines sin el sufijo de ambiente (_CERT/_PROD).</div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{layerScript_id}}" class="form-label fs-4 fw-bold color-minsait">Folder Jenkins (Capa).</label>
+                <select class="form-select" id="{{layerScript_id}}" required>
+                    <option>RDV</option>
+                    <option>UDV</option>
+                    <option>DDV</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+                <div class="form-text">Carpeta del pipeline: JOBS_<span class="text-danger" id="text{{layerScript_id}}">RDV</span>.</div>
+            </div>
+        </div>
+        <div class="col-md-12 {{reuse_pipeline_colapse}}">
+            <div class="mb-3">
+                <div class="form-check text-start">
+                    <input class="form-check-input" type="checkbox" value="" id="reusePipeline">
+                    <label class="form-check-label" for="reusePipeline">
+                        Reutilizar pipeline
+                    </label>
+                </div>
+                <div class="form-text">Marque el check si el pipeline ya fue movido anteriormente a las carpetas de CERT/PROD.</div>
+            </div>
+        </div>
+    </div>
+    <div class="col text-center mt-3 mb-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form>

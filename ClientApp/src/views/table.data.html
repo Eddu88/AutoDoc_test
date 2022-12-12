@@ -1,0 +1,16 @@
+<form class="needs-validation {{collapse_class}} multi-collapse" id="backupForm" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <div class="col mb-2">
+        <div class="mb-3">
+            <label for="{{table_id}}" class="form-label fs-4 fw-bold color-minsait">{{label_table_data}}</label>
+            <input type="text" class="form-control" id="{{table_id}}" placeholder="Ejm: HM_CONCEPTORESUMENSALDO" required>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form> 

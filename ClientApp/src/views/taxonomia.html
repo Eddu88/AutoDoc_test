@@ -1,0 +1,91 @@
+<form class="needs-validation" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <div class="row">
+        <label for="bitbucketUrl" class="form-label fs-4 fw-bold color-minsait mt-2">{{label_taxonomia_temporary}}</label>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{layerTemporary_id}}" class="form-label fs-6 fw-bold color-minsait">Capa</label>
+                <select class="form-select" id="{{layerTemporary_id}}" required>
+                    <option>RDV</option>
+                    <option>UDV</option>
+                    <option>DDV</option>
+                    <option>EDV</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{unitTemporary_id}}" class="form-label fs-6 fw-bold color-minsait">Unidad</label>
+                <input type="text" class="form-control lowercase-input" id="{{unitTemporary_id}}" placeholder="Opcional" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{solutionTemporary_id}}" class="form-label fs-6 fw-bold color-minsait">Soluci&oacute;n</label>
+                <input type="text" class="form-control lowercase-input" id="{{solutionTemporary_id}}" placeholder="Opcional" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{temporary_id}}" class="form-label fs-6 fw-bold color-minsait">{{temporary_label}}</label>
+                <input type="text" value="tmp" class="form-control lowercase-input" id="{{temporary_id}}" placeholder="Opcional" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-md-12 font-monospace">
+            <div class="form-text">
+                <p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Completa la ruta de acuerdo a tu squad!</p>
+                <i class="bi bi-terminal-fill"></i> Ruta temporal:
+                /<span class="text-danger">[ambiente]</span>/bcp/<span class="text-danger text{{layerTemporary_id}}">rdv</span><span class="text-danger text{{unitTemporary_id}}"></span><span class="text-danger text{{solutionTemporary_id}}"></span><span class="text-danger text{{temporary_id}}"><span class="text-secondary">/</span>tmp</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <label for="bitbucketUrl" class="form-label fs-4 fw-bold color-minsait mt-4">{{label_taxonomia_script}}</label>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{layerScript_id}}" class="form-label fs-6 fw-bold color-minsait">Capa</label>
+                <select class="form-select" id="{{layerScript_id}}" required>
+                    <option>RDV</option>
+                    <option>UDV</option>
+                    <option>DDV</option>
+                    <option>EDV</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{unitScript_id}}" class="form-label fs-6 fw-bold color-minsait">Unidad</label>
+                <input type="text" class="form-control lowercase-input" id="{{unitScript_id}}" placeholder="Opcional" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{solutionScript_id}}" class="form-label fs-6 fw-bold color-minsait">Soluci&oacute;n</label>
+                <input type="text" class="form-control lowercase-input" id="{{solutionScript_id}}" placeholder="Opcional" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="mb-3">
+                <label for="{{script_id}}" class="form-label fs-6 fw-bold color-minsait">{{script_label}}</label>
+                <input type="text" value="{{default_value_scripts}}" class="form-control lowercase-input" id="{{script_id}}" placeholder="Opcional" autocomplete="off">
+            </div>
+        </div>
+        <div class="col-md-12 font-monospace">
+            <div class="form-text">
+                <p class="text-danger"><i class="bi bi-exclamation-circle-fill"></i> Completa la ruta de acuerdo a tu squad!</p>
+                <i class="bi bi-terminal-fill"></i> Ruta {{script_path_label}}:
+                /<span class="text-danger">[ambiente]</span>/bcp/<span class="text-danger text{{layerScript_id}}">rdv</span><span class="text-danger text{{unitScript_id}}"></span><span class="text-danger text{{solutionScript_id}}"></span><span class="text-danger text{{script_id}}"><span class="text-secondary">/</span>{{default_value_scripts}}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3 mt-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form>

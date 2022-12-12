@@ -1,0 +1,58 @@
+<form class="needs-validation" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{projectName_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Proyecto</label>
+                <input type="text" class="form-control uppercase-input" id="{{projectName_id}}" placeholder="CRMO" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{developerName_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Desarrollador</label>
+                <input type="text" class="form-control uppercase-input" id="{{developerName_id}}" placeholder="Vicki Simmons" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{productOwner_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Product Owner</label>
+                <input type="text" class="form-control uppercase-input" id="{{productOwner_id}}" placeholder="Chad Henderson" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{schemaDevelop_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Schema desarrollo</label>
+                <input type="text" class="form-control uppercase-input" id="{{schemaDevelop_id}}" placeholder="bcp_ddv_crmo" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{tableDevelop_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Nombre de la tabla</label>
+                <input type="text" class="form-control uppercase-input" id="{{tableDevelop_id}}" placeholder="hm_cliente" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3 mt-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form>

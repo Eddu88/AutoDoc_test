@@ -1,0 +1,81 @@
+<!-- Modal -->
+<div class="modal fade" id="loadTemplatesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="loadTemplatesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-center" id="modalContent">
+                    <span class="fs-4">
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        &nbsp;Obteniendo plantillas DevSecops actualizadas de Bitbucket...
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class="needs-validation" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg">{{titlePage}}</h2>
+    <div class="mb-2">
+        <div class="form-text"><i class="bi bi-shield-exclamation"></i> Si el repositorio no existe, será creado uno nuevo. <code>(Es necesario tener permisos para crear repositorios)</code></div>
+    <div class="form-text"><i class="bi bi-shield-exclamation"></i> Si las ramas (<strong>master, develop, construccion</strong>) no existen, serán creadas.</div>
+    <div class="form-text"><i class="bi bi-shield-exclamation"></i> Los archivos de la plantilla utilizada serán guardadas en la rama <strong>construccion</strong>.</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{projectSource_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Proyecto</label>
+                <select class="form-select" id="{{projectSource_id}}" required>
+                    <option selected disabled value="">Elije una opción</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{repositorySource_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Repositorio</label>
+                <select class="form-select" id="{{repositorySource_id}}" required>
+                    <option selected disabled value="">Elije una opción</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="{{templateSource_id}}" class="form-label fs-4 fw-bold color-minsait mt-2">Plantilla</label>
+                <select class="form-select" id="{{templateSource_id}}" required>
+                    <option selected disabled value="">Elije una opción</option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label for="{{projectName_id}}"
+                    class="form-label fs-4 fw-bold color-minsait mt-2">Nombre del repositorio destino</label>
+                <input type="text" class="form-control lowercase-input" id="{{projectName_id}}"
+                    placeholder="ddv_crm_crmo_d_moro_venc_por_vencer" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio y no debe tener espacios en blanco.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col text-center mt-3 mb-3 mt-3">
+        <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i
+                class="bi bi-arrow-bar-right"></i></button>
+    </div>
+</form>

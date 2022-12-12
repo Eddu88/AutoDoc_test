@@ -1,0 +1,101 @@
+<form class="needs-validation" novalidate onsubmit="return false">
+    <h2 class="text-center color-minsait border-bottom mb-4 lh-lg"><i class="bi bi-people-fill"></i> Roles Jira</h2>
+    <div class="col mb-2">
+        <div class="mb-3">
+            <label for="summary" class="form-label fs-4 fw-bold color-minsait">T&iacute;tulo</label>
+            <input type="text" class="form-control" id="summary" placeholder="Despliegue de proceso..." required>
+            <div class="invalid-feedback">
+                Este campo es obligatorio.
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="groupAgileOps" class="form-label fs-4 fw-bold color-minsait">Aplicaci&oacute;n/Grupo AgileOps</label>
+                <select class="form-select form-select2" id="groupAgileOps" required>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="security" class="form-label fs-4 fw-bold color-minsait">Seguridad</label>
+                <select class="form-select form-select2" id="security" required>
+                    <option selected disabled value=""></option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="gobernance" class="form-label fs-4 fw-bold color-minsait">Gobierno (OPS)</label>
+                <select class="form-select form-select2" id="gobernance" required>
+                    <option selected disabled value=""></option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="sourceMVP" class="form-label fs-4 fw-bold color-minsait">Origen MVP</label>
+                <select class="form-select form-select2-without-search" id="sourceMVP" required>
+                    <option selected disabled value=""></option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="typeRequirement" class="form-label fs-4 fw-bold color-minsait">Tipo requerimiento</label>
+                <select class="form-select form-select2-without-search" id="typeRequirement" required>
+                    <option selected disabled value=""></option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="productOwner" class="form-label fs-4 fw-bold color-minsait">Product Owner</label>
+                <select class="form-select form-select2" id="productOwner" required>
+                    <option selected disabled value=""></option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="technicalLead" class="form-label fs-4 fw-bold color-minsait">L&iacute;der T&eacute;cnico</label>
+                <select class="form-select form-select2" id="technicalLead" required>
+                    <option selected disabled value=""></option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="qualityAssurance" class="form-label fs-4 fw-bold color-minsait">QA</label>
+                <select class="form-select form-select2" id="qualityAssurance" required>
+                    <option selected disabled value=""></option>
+                </select>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="numberTicket" class="form-label fs-4 fw-bold color-minsait">Nro de ticket</label>
+                <input type="text" class="form-control" id="numberTicket" required>
+                <div class="invalid-feedback">
+                    Este campo es obligatorio.
+                </div>
+            </div>
+            
+        </div>
+        <div class="col text-center mt-3 mb-3">
+            <button type="button" class="btn btn-lg btn-minsait" id="continue">Continuar <i class="bi bi-arrow-bar-right"></i></button>
+        </div>
+    </div>
+</form>

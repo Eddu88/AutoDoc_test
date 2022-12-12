@@ -1,0 +1,135 @@
+# -*- coding: utf-8 -*-
+
+#-- ||**********************************************************************************************************************
+#-- || PROYECTO       : {{PROJECT_NAME}}
+#-- || NOMBRE         : {{AMBIENTE_UPPER}}_MV_{{TABLE_NAME}}_PROCESS_BACKUP.py
+#-- || TABLA DESTINO  : {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_BK
+#-- || TABLAS FUENTES : {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}
+#-- || OBJETIVO       : POBLAR LA TABLA TEMPORAL {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_BK
+#-- || TIPO           : PY
+#-- || REPROCESABLE   : SI - RERUN
+#-- || OBSERVACION    :
+#-- || SCHEDULER      :
+#-- || JOB            :
+#-- || VERSION     DESARROLLADOR          PROVEEDOR         PO              FECHA          DESCRIPCION
+#-- || ---------------------------------------------------------------------------------------------------------------------
+#-- || 1.0         {{DEVELOPER}}       INDRA               {{PO}}          {{DATE_NOW}}     Creacion de Script
+#-- ||**********************************************************************************************************************
+###
+ # @section Import
+ ###
+import json
+import traceback
+import codecs
+import sys
+import subprocess
+from pyspark.context import SparkContext
+from pyspark.sql.session import SparkSession
+from pyspark import StorageLevel
+from pyspark.sql.functions import col, lit, sum, broadcast, length
+from pyspark.sql.types import StructType, StructField, StringType
+from pyspark.sql import SQLContext
+from pyspark import SparkContext
+from pyspark import SparkConf
+
+###
+ # @section configuraci�n de recursos
+ ##
+
+spark = SparkSession.builder.\
+appName("{{TABLE_NAME}}_BK").\
+config("spark.driver.cores", "1").\
+config("spark.executor.cores", "4").\
+config("spark.executor.memory", "22g").\
+config("spark.driver.memory", "1g").\
+config("spark.dynamicAllocation.maxExecutors", "20").\
+config("spark.executor.memoryOverhead", "4g").\
+config("spark.driver.memoryOverhead", "1g").\
+enableHiveSupport().\
+master("yarn").\
+getOrCreate()
+
+spark.conf.set("spark.shuffle.service.enabled", "true")
+spark.conf.set("spark.sql.shuffle.partitions", "1000")
+spark.conf.set("spark.default.parallelism", "1000")
+spark.conf.set("spark.debug.maxToStringField", "1000")
+spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "1048576000")
+spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
+spark.conf.set("spark.dynamicAllocation.enabled", "true")
+spark.conf.set("spark.ui.enabled", "true")
+spark.conf.set("spark.yarn.queue", "default")
+
+
+
+###
+ # @section Par�metros de proceso
+ ##
+
+PRM_SPARK_HDFS_RUTA_DATA_ENTRY = "/{{AMBIENTE}}/{{LOCATION_PATH}}"
+
+###
+ # @Section Proceso
+ ##
+
+
+ 
+def runProcessPartition(datePartition):
+	partitionDf = spark.sql(
+	"""
+	SELECT {{CAMPOS_TABLE_WITH_PARTITIONS}}
+	FROM {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}
+	WHERE {{PARTITON_NAME}} = '{var:PRM_FECHA_RUTINA}'
+	""".\
+	replace("{var:PRM_FECHA_RUTINA}", datePartition))
+	
+	partitionDf.createOrReplaceTempView("partitionDf")
+	
+	spark.sql(""" SET hive.exec.dynamic.partition=true """)
+	spark.sql(""" SET hive.exec.dynamic.partition.mode=nonstrict """)
+	
+	spark.sql(
+			"""
+			INSERT OVERWRITE TABLE {{SCHEMA_ENV}}{{SCHEMA_NAME}}.{{TABLE_NAME}}_bk partition({{PARTITONS_LIST}})
+            SELECT
+            {{CAMPOS_TABLE_WITH_PARTITIONS}}
+			FROM partitionDf
+			""")
+	print("Se ingesto la particion ", datePartition, " en la tabla {{TABLE_NAME}}_bk")	
+ 
+ 
+
+###
+ # M�todo principal
+ # @return {void}
+ ##
+def main():
+	URI = spark.sparkContext._gateway.jvm.java.net.URI
+	Path = spark.sparkContext._gateway.jvm.org.apache.hadoop.fs.Path
+	FileSystem = spark.sparkContext._gateway.jvm.org.apache.hadoop.fs.FileSystem
+	fs = (spark.sparkContext._jvm.org.apache.hadoop.fs.FileSystem.get(spark.sparkContext._jsc.hadoopConfiguration()))
+    
+	lista_rutas = fs.listStatus(Path(PRM_SPARK_HDFS_RUTA_DATA_ENTRY))
+    
+	lista_particiones = []
+	for ruta in lista_rutas:
+		lista_particiones.append(ruta.getPath().getName())
+    
+	rdd = spark.sparkContext.parallelize(lista_particiones)
+
+	datesDf = spark.createDataFrame(rdd, StringType()).filter(col("value").like("{{PARTITON_NAME}}%")).select(col("value").substr(lit({{PARTITON_NAME_LENGTH}}), (length(col('value'))+1)).alias("FECHAS"))
+	
+	datesList = datesDf.rdd.map(lambda x : x[0]).collect()
+	
+	for x in datesList:
+		runProcessPartition(x)
+	
+
+##Inicio Proceso main()
+main()
+
+##Liberar recursos
+spark.stop()
+
+##Salir
+exit()
+#spark2-submit --master yarn --driver-memory 1G --driver-cores 1 --executor-cores 7 --executor-memory 8G --queue default DESA_MV_{{TABLE_NAME}}_PROCESS_BACKUP.py > DESA_MV_{{TABLE_NAME}}_PROCESS_BACKUP.log
